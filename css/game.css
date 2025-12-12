@@ -6,85 +6,105 @@ body {
   overflow: hidden;
 }
 
-/* BACKGROUND */
+/* WRAPPER BACKGROUND */
 .bg-wrap {
   position: fixed;
-  bottom: 0;
+  bottom: 0;                    /* KUNCI AGAR BAWAH SELALU UTUH */
   left: 0;
   width: 100vw;
   height: 100vh;
+
   background-image: url('../assets/img/bg-garden.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
+  background-size: cover;       /* FULL SCREEN */
+  background-position: center bottom;  /* BAGIAN BAWAH FIX */
   z-index: -1;
 }
 
+
+/* =========================
+   PERBAIKAN AGAR TOMBOL BISA DIKLIK
+   ========================= */
 .bg-garden {
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none;
+
+  /* FIX PENTING */
+  pointer-events: none; 
   z-index: -1;
 }
 
-/* ============================
-   GRID BUNGA — RESPONSIVE
-   ============================ */
+/* =========================
+   GRID BUNGA (PAS DI DALAM KOTAK)
+   ========================= */
 .grid-bunga {
   position: absolute;
   top: 15%;
   left: 50%;
   transform: translateX(-50%);
 
-  width: 90vw;
-  max-width: 650px;
+  width: 650px;   /* ATUR UNTUK MERAPATKAN */
+  height: 360px;  /* 3 baris × 120px kira² */
+
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  row-gap: 18px;
+  grid-template-rows: repeat(3, 1fr);
 
-  justify-items: center;
+  justify-items: center;   /* BUNGA TEPAT DI TENGAH KOTAK */
   align-items: center;
 }
 
-/* ============================
-   SLOT BUNGA
-   ============================ */
-.flower-slot {
-  position: relative;
-  width: 18vw;
-  height: 18vw;
 
-  max-width: 100px;
-  max-height: 100px;
+
+.flower-slot {
+  width: 100px;
+  height: 100px;
+
+  /* Hapus background tanah karena sudah ada di bg-garden */
+  background: none;
 
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
 }
 
-/* Bunga */
+
 .flower {
-  position: relative;
-  z-index: 2;
-  width: 12vw;
-  max-width: 70px;
+  width: 70px;
   height: auto;
 }
 
-/* Tanah */
-.tanah {
-  position: absolute;
-  bottom: -18px;      /* jarak aman untuk semua device */
-  width: 14vw;
-  max-width: 90px;
-  pointer-events: none;
+/* Default vertical gap */
+.grid-bunga {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 20px; /* bebas */
 }
 
-/* ============================
+.grid-bunga {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 20px;
+}
+
+/* Atur kerapatan baris */
+.row-1 { padding: 0 0px; }
+.row-2 { padding: 0 0px; }
+.row-3 { padding: 0 0px; }
+
+
+/* Gunakan gap horizontal berdasarkan variabel */
+.row-1, .row-2, .row-3 {
+  column-gap: var(--row-gap);
+}
+
+
+
+/* =========================
    TEKO
-   ============================ */
+   ========================= */
 #teko {
   position: absolute;
   width: 140px;
@@ -93,13 +113,12 @@ body {
   pointer-events: none;
 }
 
-/* ============================
-   TOMBOL
-   ============================ */
+/* =========================
+   TOMBOL UI DENGAN GAMBAR + HOVER
+   ========================= */
 .btn-back,
 .btn-next,
-.btn-air,
-.btn-reset {
+.btn-air {
   position: fixed;
   cursor: pointer;
   z-index: 9999;
@@ -108,25 +127,33 @@ body {
 
 .btn-back img,
 .btn-next img,
-.btn-air img,
-.btn-reset img {
-  width: 70px;
+.btn-air img {
+  width: 80px;
   transition: 0.2s;
 }
 
-.btn-back:hover img,
-.btn-next:hover img,
-.btn-air:hover img,
-.btn-reset:hover img {
+.btn-back img:hover,
+.btn-next img:hover,
+.btn-air img:hover {
   transform: scale(1.1);
 }
 
-.btn-back { bottom: 20px; left: 20px; }
-.btn-next { bottom: 20px; right: 20px; }
-.btn-air  { bottom: 110px; right: 30px; }
-.btn-reset { bottom: 200px; right: 30px; }
+/* Posisi Tombol */
+.btn-back {
+  bottom: 20px;
+  left: 20px;
+}
 
-/* AIR DROPS */
+.btn-next {
+  bottom: 20px;
+  right: 20px;
+}
+
+.btn-air {
+  bottom: 110px;
+  right: 30px;
+}
+
 .air {
   position: absolute;
   font-size: 36px;
@@ -134,57 +161,46 @@ body {
 }
 
 @keyframes jatuh {
-  0%   { transform: translateY(0); opacity: 1; }
+  0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(60px); opacity: 0; }
 }
 
-/* ============================
-   MOBILE FIX — HP < 480px
-   ============================ */
-@media (max-width: 480px) {
-
-  .grid-bunga {
-    top: 18%;
-    width: 95vw;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 12px;
-  }
-
-  .flower-slot {
-    width: 30vw;
-    height: 30vw;
-  }
-
-  .flower {
-    width: 22vw;
-  }
-
-  .tanah {
-    width: 26vw;
-    bottom: -25px;
-  }
+.btn-reset {
+  position: fixed;
+  bottom: 200px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 9999;
 }
 
-@media (max-width: 480px) {
-
-  .grid-bunga {
-    grid-template-columns: repeat(3, 1fr) !important;
-    width: 95vw !important;
-    row-gap: 14px !important;
-  }
-
-  .flower-slot {
-    width: 30vw !important;
-    height: 30vw !important;
-  }
-
-  .flower {
-    width: 22vw !important;
-  }
-
-  .tanah {
-    width: 26vw !important;
-    bottom: -10px !important;
-  }
+.btn-reset img {
+  width: 80px;
+  transition: 0.2s;
 }
 
+.btn-reset img:hover {
+  transform: scale(1.1);
+}
+
+.flower-slot {
+  position: relative;  /* wajib agar tanah bisa diposisikan */
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* bunga ada di atas sedikit */
+}
+
+.tanah {
+  position: absolute;
+  bottom: -25px;  /* 👉 geser tanah lebih ke bawah dari bunga */
+  width: 90px;    /* bisa sesuaikan */
+  pointer-events: none;
+}
+
+.flower {
+  position: relative;
+  z-index: 2;      /* bunga di atas tanah */
+  width: 70px;
+  height: auto;
+}
