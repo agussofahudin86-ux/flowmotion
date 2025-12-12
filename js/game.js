@@ -31,8 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("flowerGrid");
 
   for (let i = 0; i < 15; i++) {
-    const slot = document.createElement("div");
-    slot.className = "flower-slot";
+  const slot = document.createElement("div");
+
+  // TAMBAHAN: tentukan baris
+    const rowIndex = Math.floor(i / 5) + 1;
+    slot.className = "flower-slot row-" + rowIndex;
 
     const jenis = Object.keys(bungaMap)[i % 5];
     const img = document.createElement("img");
@@ -40,12 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
     img.dataset.nama = jenis;
     img.src = bungaMap[jenis];
 
-    // => apply scale yang tersimpan
     img.style.transform = `scale(${scaleData[jenis]})`;
 
+    const tanah = document.createElement("img");
+    tanah.className = "tanah";
+    tanah.src = "assets/img/tanah.png";
+
     slot.appendChild(img);
+    slot.appendChild(tanah);
+
     grid.appendChild(slot);
   }
+
 });
 
 // =========================

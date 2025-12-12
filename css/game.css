@@ -76,13 +76,30 @@ body {
   height: auto;
 }
 
-/* ===================
-   Kerapatan per baris
-   =================== */
+/* Default vertical gap */
+.grid-bunga {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 20px; /* bebas */
+}
 
-.row-1 { margin: 0 5px; }     /* rapat */
-.row-2 { margin: 0 15px; }    /* sedang */
-.row-3 { margin: 0 25px; }    /* renggang */
+.grid-bunga {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 20px;
+}
+
+/* Atur kerapatan baris */
+.row-1 { padding: 0 0px; }
+.row-2 { padding: 0 0px; }
+.row-3 { padding: 0 0px; }
+
+
+/* Gunakan gap horizontal berdasarkan variabel */
+.row-1, .row-2, .row-3 {
+  column-gap: var(--row-gap);
+}
+
 
 
 /* =========================
@@ -163,4 +180,27 @@ body {
 
 .btn-reset img:hover {
   transform: scale(1.1);
+}
+
+.flower-slot {
+  position: relative;  /* wajib agar tanah bisa diposisikan */
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* bunga ada di atas sedikit */
+}
+
+.tanah {
+  position: absolute;
+  bottom: -10px;  /* 👉 geser tanah lebih ke bawah dari bunga */
+  width: 90px;    /* bisa sesuaikan */
+  pointer-events: none;
+}
+
+.flower {
+  position: relative;
+  z-index: 2;      /* bunga di atas tanah */
+  width: 70px;
+  height: auto;
 }

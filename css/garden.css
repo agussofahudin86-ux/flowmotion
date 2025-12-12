@@ -94,7 +94,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 20px;   /* ubah ini */
   z-index: 10;
 }
 
