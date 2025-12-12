@@ -18,7 +18,7 @@ function loadAssessmentFromLocal() {
     let history = JSON.parse(localStorage.getItem("emotionHistory")) || [];
 
     if (history.length === 0) {
-        assessmentImg.src = "../assets/img/keadaan-default.jpg";
+        assessmentImg.src = "assets/img/keadaan-default.jpg";
         assessmentText.innerText = "Belum ada data emosi untuk dianalisis.";
         return;
     }
@@ -43,13 +43,13 @@ function loadAssessmentFromLocal() {
         bersyukur: "keadaan-bersyukur.jpg"
     };
     
-    assessmentImg.src = `../assets/img/${emotionImages[maxEmotion]}`;
+    assessmentImg.src = `assets/img/${emotionImages[maxEmotion]}`;
    
 }
 
 // =======================
 // NAVIGASI HALAMAN
 // =======================
-function goReport() { window.location.href = "../pages/report.html"; }
-function goEmotion() { window.location.href = "../pages/emotion.html"; }
-function goHome() { window.location.href = "../pages/index.html"; }
+function goReport() { window.location.href = "report.html"; }
+function goEmotion() { window.location.href = "emotion.html"; }
+function goHome() { window.location.href = "index.html"; }

@@ -20,11 +20,11 @@ let scaleData = JSON.parse(localStorage.getItem("flowerScaleData")) || {
 
 // Peta gambar bunga
 const bungaMap = {
-  senang: "../assets/img/bunga-senang.png",
-  sedih: "../assets/img/bunga-sedih.png",
-  cemas: "../assets/img/bunga-cemas.png",
-  marah: "../assets/img/bunga-marah.png",
-  bersyukur: "../assets/img/bunga-bersyukur.png"
+  senang: "assets/img/bunga-senang.png",
+  sedih: "assets/img/bunga-sedih.png",
+  cemas: "assets/img/bunga-cemas.png",
+  marah: "assets/img/bunga-marah.png",
+  bersyukur: "assets/img/bunga-bersyukur.png"
 };
 
 document.addEventListener("DOMContentLoaded", () => {
