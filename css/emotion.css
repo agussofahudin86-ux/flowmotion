@@ -1,0 +1,140 @@
+/* ==========================
+   HALAMAN PILIH EMOSI
+   ========================== */
+
+.emotion-bg {
+    background: url('../assets/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.emotion-container {
+    width: 100%;
+    max-width: 1150px;
+    text-align: center;
+    position: relative;
+    padding-top: 0;
+}
+
+/* Papan Judul */
+.wood-board-title {
+    background: url('../assets/img/papan-emotion.png') no-repeat center;
+    background-size: contain;
+    width: 500px;
+    height: 150px;
+    margin: 15px auto -10px auto;
+}
+
+.emotion-grid {
+    display: flex;
+    flex-direction: column; /* menumpuk baris vertikal */
+    align-items: center;    /* semua baris di tengah */
+    gap: 0px;              /* jarak antar baris */
+}
+
+/* Baris pertama */
+.row-1 {
+    display: flex;
+    justify-content: center;
+    gap: 130px;              /* jarak antar emoji */
+}
+
+/* Baris kedua */
+.row-2 {
+    display: flex;
+    justify-content: center;
+    gap: 130px;              /* jarak antar emoji */
+    margin-top: -30px;
+}
+
+
+
+/* ======== EMOJI BOX ======== */
+.emotion-box {
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+
+.emotion-box:hover {
+    transform: scale(1.12);
+}
+
+.emotion-box.bersyukur {
+    width: 150px;               /* diperbesar */
+    height: 150px;
+    transition: transform 0.25s ease;
+}
+
+.emotion-box.bersyukur:hover {
+    transform: scale(1.15);
+}
+
+/* ================= GAMBAR LATAR UNTUK EMOSI ==================== */
+
+.emotion-box.senang {
+    background-image: url('../assets/img/senang.png');
+}
+
+.emotion-box.sedih {
+    background-image: url('../assets/img/sedih.png');
+}
+
+.emotion-box.marah {
+    background-image: url('../assets/img/marah.png');
+}
+
+.emotion-box.cemas {
+    background-image: url('../assets/img/cemas.png');
+}
+
+.emotion-box.bersyukur {
+    background-image: url('../assets/img/bersyukur.png');
+}
+
+
+/* ================= TOMBOL BACK ==================== */
+.btn-back {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    width: 150px;
+    height: 60px;
+
+    background: url('../assets/ui/button-back.png') no-repeat center;
+    background-size: 100% 100%;
+    
+    border: none;
+    cursor: pointer;
+
+    outline: none;
+    user-select: none;
+
+    z-index: 9999;
+}
+
+.btn-back:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease;
+}
+
+.btn-back,
+.btn-back:focus,
+.btn-back:active,
+.btn-back:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    -webkit-focus-ring-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}

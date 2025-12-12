@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taman</title>
+  <link rel="stylesheet" href="../css/game.css">
+</head>
+
+<body>
+  <div class="bg-wrap"></div>
+
+  <!-- Tombol Back -->
+  <div class="btn-back" onclick="goBack()">
+    <img src="../assets/ui/button-back.png" alt="back">
+  </div>
+
+  <!-- Tombol Next -->
+  <div class="btn-next" onclick="goNext()">
+    <img src="../assets/ui/button-next.png" alt="next">
+  </div>
+
+  <div class="btn-reset" onclick="resetTaman()">
+    <img src="../assets/ui/button-reset.png">
+  </div>
+
+  <!-- Tombol Air -->
+  <div class="btn-air" onclick="mulaiMenyiram()">
+    <img src="../assets/img/ikon-air.png" alt="air">
+  </div>
+
+  <!-- Grid bunga -->
+  <div class="grid-bunga" id="flowerGrid"></div>
+
+  <!-- Teko -->
+  <img id="teko" src="../assets/img/teko.png">
+
+  <script src="../js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* WRAPPER BACKGROUND */
+.bg-wrap {
+  position: fixed;
+  bottom: 0;                    /* KUNCI AGAR BAWAH SELALU UTUH */
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url('../assets/img/bg-garden.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;       /* FULL SCREEN */
+  background-position: center bottom;  /* BAGIAN BAWAH FIX */
+  z-index: -1;
+}
+
+
+/* =========================
+   PERBAIKAN AGAR TOMBOL BISA DIKLIK
+   ========================= */
+.bg-garden {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* FIX PENTING */
+  pointer-events: none; 
+  z-index: -1;
+}
+
+/* =========================
+   GRID BUNGA (PAS DI DALAM KOTAK)
+   ========================= */
+.grid-bunga {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 650px;   /* ATUR UNTUK MERAPATKAN */
+  height: 360px;  /* 3 baris × 120px kira² */
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+
+  justify-items: center;   /* BUNGA TEPAT DI TENGAH KOTAK */
+  align-items: center;
+}
+
+
+
+.flower-slot {
+  width: 100px;
+  height: 100px;
+
+  /* Hapus background tanah karena sudah ada di bg-garden */
+  background: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.flower {
+  width: 70px;
+  height: auto;
+}
+
+/* ===================
+   Kerapatan per baris
+   =================== */
+
+.row-1 { margin: 0 5px; }     /* rapat */
+.row-2 { margin: 0 15px; }    /* sedang */
+.row-3 { margin: 0 25px; }    /* renggang */
+
+
+/* =========================
+   TEKO
+   ========================= */
+#teko {
+  position: absolute;
+  width: 140px;
+  transition: all 1.2s ease;
+  display: none;
+  pointer-events: none;
+}
+
+/* =========================
+   TOMBOL UI DENGAN GAMBAR + HOVER
+   ========================= */
+.btn-back,
+.btn-next,
+.btn-air {
+  position: fixed;
+  cursor: pointer;
+  z-index: 9999;
+  user-select: none;
+}
+
+.btn-back img,
+.btn-next img,
+.btn-air img {
+  width: 80px;
+  transition: 0.2s;
+}
+
+.btn-back img:hover,
+.btn-next img:hover,
+.btn-air img:hover {
+  transform: scale(1.1);
+}
+
+/* Posisi Tombol */
+.btn-back {
+  bottom: 20px;
+  left: 20px;
+}
+
+.btn-next {
+  bottom: 20px;
+  right: 20px;
+}
+
+.btn-air {
+  bottom: 110px;
+  right: 30px;
+}
+
+.air {
+  position: absolute;
+  font-size: 36px;
+  animation: jatuh 1.2s ease-out forwards;
+}
+
+@keyframes jatuh {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(60px); opacity: 0; }
+}
+
+.btn-reset {
+  position: fixed;
+  bottom: 200px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.btn-reset img {
+  width: 80px;
+  transition: 0.2s;
+}
+
+.btn-reset img:hover {
+  transform: scale(1.1);
+}

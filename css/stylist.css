@@ -1,0 +1,403 @@
+.container {
+    max-width: 400px;
+    margin: auto;
+}
+
+input, textarea, button {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+
+.emotion {
+    padding: 20px;
+    background: #f2f2f2;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+
+/* Latar belakang halus */
+/* BACKGROUND */
+.welcome-bg {
+    background: url('../assets/img/background-biodata.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* WRAPPER UTAMA TANPA FRAME */
+.content-wrapper {
+    text-align: center;
+}
+
+/* JUDUL ATAS */
+.app-title {
+    margin-top: -30px;
+    margin-bottom: 35px;
+    font-family: 'Arsenica Antiqua', serif !important; 
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: #FFD700;
+    text-shadow:
+        0px 2px 2px rgba(0,0,0,0.5),
+        0px 3px 6px #8A6400;
+}
+
+/* Papan Judul di atas mentok layar dan tengah */
+.title-board {
+    width: 500px; /* sesuaikan ukuran papan */
+    height: 150px; /* sesuaikan tinggi papan */
+    background: url('../assets/img/papan-judul.png') no-repeat center/contain;
+    margin: 0 auto;      /* center horizontal */
+    position: absolute;  /* agar menempel ke atas */
+    top: -25px;              /* mentok atas */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    background: url('../assets/img/profil.png') no-repeat center/cover;
+    border-radius: 30%;
+    filter: brightness(0) invert(1); /* INI MEMBUAT IKON JADI PUTIH */
+    margin: 50px auto 30px auto;
+}
+
+
+/* INPUT STYLE */
+.bio-form input {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 30px; /* OVAL */
+    border: none;
+    background: rgba(255,255,255,0.7);
+    font-size: 16px;
+    outline: none;
+}
+
+/* TOMBOL OVAL MULAI */
+.btn-start {
+    width: 20%;
+    padding: 12px;
+    margin: 20px auto 0; 
+    display: block; 
+    border-radius: 30px;
+    font-size: 17px;
+    background: #0b57cf;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-start:hover {
+    background: #0947aa;
+}
+.bio-form input {
+    width: 60%;
+    padding: 13px;
+    margin: 12px auto;
+    border-radius: 30px;
+    border: 3px solid white;
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    outline: none;
+    text-align: left;       
+    padding-left: 20px;  
+}
+
+.bio-form input[type=number]::-webkit-inner-spin-button,
+.bio-form input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+.bio-form input::placeholder {
+    color: rgba(255,255,255,0.8);
+}
+.app-title {
+    margin-bottom: 35px; /* jarak judul ke profil */
+}
+
+/* JARAK PROFIL KE NAMA */
+.profile-icon {
+    margin-bottom: 15px; /* dari icon ke input nama */
+}
+
+/* JARAK NAMA KE USIA */
+.bio-form input:first-child {
+    margin-bottom: 5px; /* jarak nama ke usia */
+}
+
+/* JARAK USIA KE TOMBOL MULAI */
+.bio-form input:nth-child(2) { 
+    margin-bottom: 10px; /* jarak usia ke tombol mulai */
+}
+
+/* TOMBOL MULAI TENGAH & DI BAWAH */
+.btn-start {
+    width: 30%;
+    margin: 0 auto;      /* pastikan tetap di tengah */
+    display: block;
+}
+
+
+
+/* ==========================
+   HALAMAN PILIH EMOSI
+   ========================== */
+
+/* Background taman */
+.emotion-bg {
+    background: url('../img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+    height: 100vh;        /* ← PAS 1 LAYAR */
+    overflow: hidden;     /* ← HILANGKAN SCROLL */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= KONTAINER ==================== */
+.emotion-container {
+    width: 100%;
+    max-width: 1150px;
+    text-align: center;
+    position: relative;
+    padding-top: 0;
+    transform: translateY(-50px);  /* ← ANGKAT KE ATAS */
+}
+
+/* ================= PAPAN JUDUL ==================== */
+.wood-board-title {
+    background: url('../img/papan-nama.png') no-repeat center;
+    background-size: 100% 100%;
+    width: 65%;
+    height: 75px;
+    margin: auto;
+    padding: 40px;
+    
+    display: flex;
+    justify-content: center;   /* tengah horizontal */
+    align-items: flex-end;     /* ↓ teks turun ke bawah */
+    padding-bottom: 15px;      /* jarak sedikit dari bawah */
+
+    font-family: 'Cinzel', serif; 
+    font-size: 38px;
+    color: #ffe28a;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px black;
+
+    margin-bottom: 45px;
+}
+
+/* ================= GRID EMOSI ==================== */
+.emotion-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding: 0 80px;
+}
+
+/* Kotak papan kayu */
+.emotion-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    transform-origin: center;
+    transition: transform 0.25s ease;
+
+    background: url('../img/papan-emoji.png') no-repeat center;
+    background-size: 100% 100%;
+    padding: 45px 10px;
+
+    font-family: 'Cinzel', serif; 
+    font-size: 32px;
+    color: #ffe28a;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px black;
+
+    cursor: pointer;
+}
+
+.emotion-box:hover {
+    transform: scale(1.10);
+}
+
+.emotion-box span {
+    display: inline;
+    font-size: 26px;
+}
+
+
+/* ================= TOMBOL NAVIGASI ==================== */
+/* Tombol BACK & NEXT — posisinya fix di pojok layar */
+.btn-nav {
+    width: auto !important;
+    margin: 0 !important;
+
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 20px !important;
+
+    padding: 15px 40px !important;
+
+    background: url('../img/ui/btn-wood.png') no-repeat center;
+    background-size: 100% 100%;
+
+    /* 💛 Samakan gaya tulisan dengan papan kayu */
+    color: #ffe28a !important;
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    text-shadow: 3px 3px 5px black !important;
+
+    border: none;
+    cursor: pointer;
+
+    z-index: 999999 !important;
+}
+
+.btn-back {
+    left: 20px !important;
+}
+
+.btn-next {
+    right: 20px !important;
+}
+
+
+/* Background halaman jurnal */
+/* Background jurnal */
+.journal-bg {
+    background: url('../img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 🔥 TARIK KONTEN NAIK */
+    align-items: center;
+    padding-top: -10px; /* Atur jarak dari atas */
+    overflow: hidden;
+}
+
+.wood-board-title {
+    background: url('../img/papan-nama.png') no-repeat center;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 120px;          /* tinggi yang diinginkan */
+    box-sizing: border-box;  /* padding masuk hitungan tinggi */
+    padding: 65px 0;        /* jangan terlalu besar */
+    display: flex;
+    justify-content: center;
+    font-family: 'Cinzel', serif; 
+    font-size: 38px;
+    color: #ffe28a;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px black;
+    margin-bottom: -20px;
+    
+}
+
+
+
+/* FRAME KALIMAT PEMBUKA */
+.opening-frame {
+    background: url('../img/papan-catatan.png') no-repeat center;
+    background-size: 100% 100%;
+    width: 420px;
+    min-height: 70px;
+    padding: 18px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #4b2e0f;
+    text-shadow: 1px 1px 2px #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -30px;
+    border-radius: 10px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+/* FRAME ISI JURNAL */
+.journal-frame {
+    width: 420px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 3px solid #b48a53;
+    border-radius: 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    animation: fadeInUp 1s ease-out;
+    
+}
+
+/* Textarea khusus */
+.journal-frame textarea {
+    width: 100%;
+    height: 250px;
+    border-radius: 12px;
+    padding: 15px;
+    border: 2px solid #c7a772;
+    font-size: 16px;
+    resize: none;
+    background: #fffef7;
+    outline: none;
+}
+
+/* Tombol simpan */
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    background-color: #0b57cf;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    background-color: #0947aa;
+    transform: translateY(-2px);
+}
+
+/* Animasi */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Body */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}

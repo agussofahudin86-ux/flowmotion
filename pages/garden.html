@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asesmen Kesehatan Emosional</title>
+
+  <!-- Style global -->
+  <link rel="stylesheet" href="../css/stylist.css">
+
+  <!-- Style khusus garden -->
+  <link rel="stylesheet" href="../css/garden.css">
+</head>
+
+<body>
+
+  <!-- JUDUL HALAMAN -->
+  <header class="garden-header">
+    <h1>Asesmen Jurnal Emosi Mu</h1>
+  </header>
+
+  <!-- WRAPPER UTAMA -->
+  <div class="garden-container">
+
+      <!-- AREA ASESMEN SAJA -->
+      <div class="assessment-container" id="assessmentContainer">
+        <div class="assessment-card">
+            <img id="assessmentImg" src="" alt="Keadaan Emosi" />
+            <p id="assessmentText"></p>
+        </div>
+      </div>
+
+  </div>
+
+  <!-- MENU NAVIGASI BAWAH -->
+  <div class="bottom-menu">
+      <div class="menu-btn" onclick="goHome()">Keluar</div>
+      <div class="menu-btn" onclick="goEmotion()">Main</div>
+      <div class="menu-btn" onclick="goReport()">Data</div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="../js/firebase.js"></script>
+  <script src="../js/garden.js"></script>
+
+</body>
+</html>

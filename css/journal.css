@@ -1,0 +1,162 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===================== BACKGROUND ======================= */
+.journal-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    background: url('../assets/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+    position: relative; 
+    padding-top: 100px;  /* ruang dari atas */
+}
+
+/* ===================== Papan Judul ====================== */
+.wood-board-title {
+    position: absolute;
+    top: -25px;  
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 130px;
+    background: url('../assets/img/papan-journal.png') no-repeat center;
+    background-size: contain;
+    z-index: 9999; 
+}
+
+/* ===================== FRAME JURNAL GABUNG ====================== */
+.journal-container {
+    width: 520px;
+    margin-top: 30px; /* jarak dari papan judul */
+    background: rgba(255, 254, 247, 0); /* transparan sepenuhnya */
+    border: 3px solid #b48a53;
+    border-radius: 20px;
+    backdrop-filter: blur(8px); /* blur aktif di seluruh container */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7px 25px;
+}
+
+/* Kalimat statis di dalam frame */
+.journal-container .feeling-text {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    color: #FFD700;
+    font-weight: 600;
+    line-height: 50px;
+    background: url('../assets/img/papan-catatan.png') no-repeat center;
+    background-size: 100% 100%;
+    margin-bottom: 0.5px; /* jarak ke textarea */
+}
+
+/* Textarea isi jurnal */
+.journal-container .journal-frame {
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    border: 2px solid #c7a772;
+    border-radius: 15px;
+    backdrop-filter: blur(6px); /* blur tetap */
+    display: flex;
+    justify-content: center;
+    background: #fffef7; /* putih agar tulisan terbaca */
+}
+
+.journal-container .journal-frame textarea {
+    width: 100%;
+    height: 150;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    padding: 15px;
+    resize: none;
+    outline: none;
+    background: transparent; /* biar tetap ikut blur container */
+}
+
+
+/* ===================== BUTTON SIMPAN ====================== */
+.btn-save {
+    margin-top: 25px;
+    width: 160px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-save:hover {
+    background-color: #45a049;
+}
+
+/* ===================== NAVIGATION BUTTONS ====================== */
+.btn-nav {
+    position: fixed;
+    bottom: 20px;
+    width: 150px;
+    height: 60px;
+
+    background-color: transparent !important;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: none;
+
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-focus-ring-color: transparent;
+    -moz-outline-style: none;
+}
+
+/* BACK BUTTON */
+.btn-back {
+    left: 20px;
+    background-image: url('../assets/ui/button-back.png');
+}
+
+/* NEXT BUTTON */
+.btn-next {
+    right: 20px;
+    background-image: url('../assets/ui/button-next.png');
+}
+
+/* HOVER EFEK (sedikit membesar) */
+.btn-nav:hover {
+    transform: scale(1.06);
+    transition: 0.2s ease-in-out;
+}
+
+/* MATIKAN OUTLINE DEFAULT */
+.btn-nav:focus,
+.btn-nav:active,
+.btn-nav:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Tombol Next diaktifkan nanti */
+.btn-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

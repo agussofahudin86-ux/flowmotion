@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesmen Kesehatan Emosional</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/report.css">
+</head>
+
+<body>
+
+    <div class="report-bg">
+
+        <div class="report-board">
+
+            <!-- JUDUL -->
+            <h1 class="judul-halaman">Asesmen Kesehatan Emosional</h1>
+
+            <!-- GRAFIK EMOSI -->
+            <div class="chart-box">
+                <canvas id="emotionChart"></canvas>
+            </div>
+
+            <!-- BOX JURNAL -->
+            <div class="journal-list">
+                <h2>Catatan Jurnal Anda</h2>
+                <div id="journalContent"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- TOMBOL BACK (NO TOOLTIP) -->
+    <div class="btn-back" onclick="window.location.href='garden.html'"></div>
+
+
+    <!-- CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- SCRIPT REPORT -->
+    <script src="../js/report.js"></script>
+
+    <!-- SCRIPT UNTUK MEMUNCULKAN BACK SAAT SCROLL BAWAH -->
+    <script>
+        document.addEventListener("scroll", function () {
+
+            const btn = document.querySelector(".btn-back");
+
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const pageHeight = document.body.scrollHeight;
+
+            // Muncul saat mendekati bawah halaman
+            if (scrollPosition >= pageHeight - 200) {
+                btn.classList.add("show");
+            } else {
+                btn.classList.remove("show");
+            }
+
+        });
+    </script>
+
+</body>
+</html>
