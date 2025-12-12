@@ -45,12 +45,13 @@ body {
   left: 50%;
   transform: translateX(-50%);
 
-  width: 650px;   /* ATUR UNTUK MERAPATKAN */
-  height: 360px;  /* 3 baris × 120px kira² */
+  width: 90vw;       /* RESPONSIF */
+  max-width: 650px;  /* Laptop tetap rapi */
+  height: auto;
 
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  row-gap: 20px;
 
   justify-items: center;   /* BUNGA TEPAT DI TENGAH KOTAK */
   align-items: center;
@@ -59,8 +60,10 @@ body {
 
 
 .flower-slot {
-  width: 100px;
-  height: 100px;
+  width: 18vw;
+  max-width: 100px;
+  height: 18vw;
+  max-height: 100px;
 
   /* Hapus background tanah karena sudah ada di bg-garden */
   background: none;
@@ -72,7 +75,8 @@ body {
 
 
 .flower {
-  width: 70px;
+  width: 12vw;
+  max-width: 70px;
   height: auto;
 }
 
@@ -193,8 +197,9 @@ body {
 
 .tanah {
   position: absolute;
-  bottom: -10px;  /* 👉 geser tanah lebih ke bawah dari bunga */
-  width: 90px;    /* bisa sesuaikan */
+  bottom: -25px;  /* 👉 geser tanah lebih ke bawah dari bunga */
+  width: 14vw;
+  max-width: 90px;
   pointer-events: none;
 }
 
@@ -204,3 +209,27 @@ body {
   width: 70px;
   height: auto;
 }
+
+@media (max-width: 480px) {
+  .grid-bunga {
+    top: 18%;
+    width: 95vw;
+    grid-template-columns: repeat(3, 1fr); /* Dari 5 → 3 kolom agar tidak kepadatan */
+    row-gap: 14px;
+  }
+
+  .flower-slot {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .flower {
+    width: 22vw;
+  }
+
+  .tanah {
+    width: 26vw;
+    bottom: -6px;   /* sesuaikan jarak bunga–tanah di HP */
+  }
+}
+
