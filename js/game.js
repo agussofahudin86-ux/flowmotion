@@ -1,10 +1,11 @@
 function goBack() {
-  wparent.goTo("emotion.html");
+  window.parent.goTo("emotion.html");
 }
 
 function goNext() {
-  parent.goTo("journal.html");
+  window.parent.goTo("journal.html");
 }
+
 
 // Ambil emosi dari halaman emotion
 const emosiDipilih = localStorage.getItem("feelingToday") || "senang";
