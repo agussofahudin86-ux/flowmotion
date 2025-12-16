@@ -40,8 +40,15 @@
 
     </div>
 
-    <!-- Tombol Back -->
-    <div class="btn-back" onclick="parent.goTo('index.html')"></div>
+    <script>
+    function goHome() {
+    window.top.location.href = "index.html"; 
+    // ⬆ keluar dari iframe → reload index → musik mati
+    }
+    </script>
+
+    <div class="btn-back" onclick="goHome()"></div>
+
 
     <script src="js/emotion.js"></script>
 
