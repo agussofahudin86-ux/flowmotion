@@ -139,4 +139,51 @@
     -webkit-tap-highlight-color: transparent !important;
 }
 
+/* =========================
+   RESPONSIVE EMOTION
+   ========================= */
+
+@media (max-width: 1024px) {
+  .row-1,
+  .row-2 {
+    gap: 80px;
+  }
+
+  .emotion-box {
+    width: 100px;
+    height: 100px;
+  }
+
+  .emotion-box.bersyukur {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wood-board-title {
+    width: 260px;
+    height: 90px;
+  }
+
+  .row-1,
+  .row-2 {
+    gap: 40px;
+  }
+
+  .emotion-box {
+    width: 80px;
+    height: 80px;
+  }
+
+  .emotion-box.bersyukur {
+    width: 95px;
+    height: 95px;
+  }
+
+  .btn-back {
+    width: 100px;
+    height: 45px;
+  }
+}
 

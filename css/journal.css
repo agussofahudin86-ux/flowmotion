@@ -161,3 +161,25 @@ html, body {
     cursor: not-allowed;
 }
 
+/* =========================
+   RESPONSIVE JOURNAL
+   ========================= */
+
+@media (max-width: 768px) {
+  .wood-board-title {
+    width: 280px;
+    height: 90px;
+  }
+
+  .journal-container {
+    width: 90%;
+  }
+
+  .journal-container textarea {
+    font-size: 15px;
+  }
+
+  .btn-save {
+    width: 140px;
+  }
+}

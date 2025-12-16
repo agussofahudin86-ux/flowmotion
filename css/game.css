@@ -205,3 +205,52 @@ body {
   height: auto;
 }
 
+/* =========================
+   RESPONSIVE GAME
+   ========================= */
+
+@media (max-width: 1024px) {
+  .grid-bunga {
+    width: 520px;
+    height: 300px;
+  }
+
+  .flower-slot {
+    width: 80px;
+    height: 80px;
+  }
+
+  .flower {
+    width: 55px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-bunga {
+    width: 90%;
+    height: auto;
+    top: 20%;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 15px;
+  }
+
+  .flower-slot {
+    width: 70px;
+    height: 70px;
+  }
+
+  .flower {
+    width: 45px;
+  }
+
+  .btn-back img,
+  .btn-next img,
+  .btn-air img,
+  .btn-reset img {
+    width: 60px;
+  }
+
+  .btn-air {
+    bottom: 90px;
+  }
+}
