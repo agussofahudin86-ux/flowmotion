@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>FlowMotion App</title>
+
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 AUDIO HIDUP DI SINI (SATU-SATUNYA) -->
+<audio id="bgm" src="assets/audio/backsound.mp3" autoplay loop></audio>
+
+<!-- KONTEN -->
+<iframe id="frame" src="emotion.html"></iframe>
+
+<script>
+function goTo(page) {
+    document.getElementById("frame").src = page;
+}
+</script>
+
+</body>
+</html>

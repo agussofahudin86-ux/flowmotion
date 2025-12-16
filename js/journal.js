@@ -38,14 +38,14 @@ feelingText.textContent = `Panduan: ${guideText}`;
 
 // Tombol Back → kembali ke game.html
 document.querySelector('.btn-back').onclick = () => {
-    window.location.href = "game.html";
+    parent.goTo("game.html");
 };
 
 // Tombol Next → ke garden.html (aktif setelah simpan)
 const btnNext = document.querySelector('.btn-next');
 btnNext.onclick = () => {
     if (!btnNext.disabled) {
-        window.location.href = "garden.html";
+        parent.goTo("garden.html");
     }
 };
 

@@ -23,7 +23,7 @@ if (emotionBoxes.length > 0) {
             localStorage.setItem("emotionHistory", JSON.stringify(history));
 
             // Lanjut ke game
-            window.location.href = "game.html";
+            parent.goTo("game.html");
         });
     });
 }

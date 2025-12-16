@@ -1,9 +1,9 @@
 function goBack() {
-  window.history.back();
+  wparent.goTo("emotion.html");
 }
 
 function goNext() {
-  window.location.href = "journal.html";
+  parent.goTo("journal.html");
 }
 
 // Ambil emosi dari halaman emotion

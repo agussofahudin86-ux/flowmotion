@@ -50,6 +50,8 @@ function loadAssessmentFromLocal() {
 // =======================
 // NAVIGASI HALAMAN
 // =======================
-function goReport() { window.location.href = "report.html"; }
+function goReport() { parent.goTo("report.html"); }
 function goEmotion() { window.location.href = "emotion.html"; }
-function goHome() { window.location.href = "index.html"; }
+function goHome() {
+    window.top.location.href = "index.html"; // KELUAR APP → MUSIK MATI
+}

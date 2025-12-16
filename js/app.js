@@ -8,7 +8,7 @@ if (document.getElementById("biodataForm")) {
         const age  = document.getElementById("age").value;
         localStorage.setItem("name", name);
         localStorage.setItem("age", age);
-        window.location.href = "emotion.html";  // BENAR
+        window.location.href = "app.html";  // BENAR
 
     });
 }
