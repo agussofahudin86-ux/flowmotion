@@ -13,8 +13,8 @@ html, body {
 
     background: url('../assets/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-y: auto;
     position: relative; 
     padding-top: 100px;  /* ruang dari atas */
 }
@@ -183,3 +183,46 @@ html, body {
     width: 140px;
   }
 }
+
+/* =================================
+   LANDSCAPE HP - JOURNAL SCROLL
+   ================================= */
+@media (max-width: 900px) and (orientation: landscape) {
+
+  body.allow-scroll {
+    overflow-y: auto;
+  }
+  .journal-bg {
+    min-height: 100vh;
+    overflow: visible; /* penting */
+  }
+
+
+  .journal-container {
+    min-height: auto;
+  }
+
+  .wood-board-title {
+    width: 220px;
+    height: 70px;
+    top: -15px;
+  }
+
+  .journal-container textarea {
+    height: 110px;
+    font-size: 14px;
+  }
+
+  .btn-save {
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+  }
+
+  .btn-nav {
+    width: 100px;
+    height: 45px;
+    bottom: 10px;
+  }
+}
+

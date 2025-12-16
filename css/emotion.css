@@ -5,8 +5,8 @@
 .emotion-bg {
     background: url('../assets/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -184,6 +184,44 @@
   .btn-back {
     width: 100px;
     height: 45px;
+  }
+}
+
+/* =================================
+   HP LANDSCAPE MODE - EMOTION
+   ================================= */
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .wood-board-title {
+    width: 220px;
+    height: 75px;
+    margin-bottom: 5px;
+  }
+
+   .emotion-grid {
+    gap: 10px;
+  }
+
+  .row-1,
+  .row-2 {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .emotion-box {
+    width: 65px;
+    height: 65px;
+  }
+
+  .emotion-box.bersyukur {
+    width: 80px;
+    height: 80px;
+  }
+
+  .btn-back {
+    width: 90px;
+    height: 40px;
+    bottom: 10px;
+    left: 10px;
   }
 }
 

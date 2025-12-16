@@ -289,13 +289,13 @@ body {
 .journal-bg {
     background: url('../img/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* 🔥 TARIK KONTEN NAIK */
     align-items: center;
     padding-top: -10px; /* Atur jarak dari atas */
-    overflow: hidden;
+    overflow: visible;
 }
 
 .wood-board-title {
@@ -399,8 +399,10 @@ button:hover {
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
+
 
 /* =========================
    RESPONSIVE GLOBAL
@@ -444,6 +446,40 @@ body {
 
   .btn-start {
     width: 60%;
+    font-size: 15px;
+  }
+}
+
+/* =================================
+   HP LANDSCAPE MODE - GLOBAL
+   ================================= */
+@media (max-width: 900px) and (orientation: landscape) {
+
+    body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+
+  .title-board {
+    width: 240px;
+    height: 80px;
+    top: -10px;
+  }
+
+  .profile-icon {
+    width: 55px;
+    height: 55px;
+  }
+
+  .bio-form input {
+    width: 85%;
+    font-size: 15px;
+  }
+
+  .btn-start {
+    width: 45%;
     font-size: 15px;
   }
 }

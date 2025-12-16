@@ -127,5 +127,20 @@ body {
   .assessment-card p {
     font-size: 16px;
   }
+}/* =================================
+   LANDSCAPE HP - GARDEN SCROLL
+   ================================= */
+@media (max-width: 900px) and (orientation: landscape) {
+
+  body.allow-scroll {
+    overflow-y: auto;
+  }
+
+  .garden-container {
+    min-height: auto;
+    padding-bottom: 220px; /* ruang menu bawah */
+  }
+
 }
+
 

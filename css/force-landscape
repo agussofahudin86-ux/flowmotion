@@ -1,0 +1,72 @@
+/* =========================================
+   FORCE LANDSCAPE MODE - ALL PAGES (HP)
+   ========================================= */
+
+/* Overlay default mati */
+.rotate-warning {
+  display: none;
+}
+
+/* Jika HP + PORTRAIT → KUNCI HALAMAN */
+@media (max-width: 900px) and (orientation: portrait) {
+
+  body {
+    overflow: hidden;
+  }
+
+  .rotate-warning {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rotate-box {
+    background: #222;
+    color: #fff;
+    padding: 30px 35px;
+    border-radius: 16px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* SEMUA KONTEN DISEMBUNYIKAN */
+  body > *:not(.rotate-warning) {
+    display: none !important;
+  }
+}
+
+/* =========================================
+   LANDSCAPE MODE AKTIF (HP)
+   ========================================= */
+@media (max-width: 900px) and (orientation: landscape) {
+
+  body.allow-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: auto;
+  }
+
+
+  /* Skala UI umum */
+  button,
+  .btn,
+  .btn-nav {
+    transform: scale(0.9);
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+
+  .container,
+  .page-container {
+    width: 90%;
+    padding: 10px;
+  }
+}
